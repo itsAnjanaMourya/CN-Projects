@@ -1,0 +1,363 @@
+:root {
+  --primary-color: #3d85c0;
+  --primary-light: #69adde;
+  --select-box-color: ;
+  --select-dropdown-color: #4392d2;
+  --card-shadow: rgba(89, 47, 114, 0.916) -1.95px -1.95px 5px;
+  --button-color: rgba(140, 89, 243, 0.97);
+  --button-shadow: rgb(117, 66, 147) 1.95px 1.95px 2px;
+  --select-color: #4278a3ed;
+  --dark-theme-primary-color: rgb(115, 127, 139);
+  --dark-theme-primary-light: rgba(40, 60, 85, 0.952);
+  --dark-theme-card-shadow: rgba(201, 202, 204, 0.916) -1.95px -1.95px 5px;
+}
+
+body {
+  padding: 0;
+}
+
+.light-theme-body {
+  background-color: white;
+  color: black;
+}
+
+.dark-theme-body {
+  background-color: var(--dark-theme-primary-color);
+  color: white;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 100px;
+  height: 34px;
+  align-self: flex-end;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:after {
+  content: "Dark";
+  color: white;
+  position: absolute;
+  top: 25%;
+  right: 6%;
+}
+
+input:checked+.slider {
+  background-color: var(--primary-light)
+}
+
+input:focus+.slider {
+  box-shadow: 0 0 1px var(--primary-color)
+}
+
+input:checked+.slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+input:checked+.slider:after {
+  content: "Light";
+  color: white;
+  position: absolute;
+  top: 25%;
+  right: 6%;
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.header h1 {
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  background-color: var(--primary-light);
+  width: 28vw;
+  min-width: max-content;
+  padding: 20px;
+  /* height: 70vh;  
+    min-height: 500px; */
+  border-radius: 10px;
+  box-shadow: var(--card-shadow);
+}
+
+@media screen and (max-width: 721px) {
+  .card {
+    width: 60vw;
+  }
+}
+
+.dark-theme-card {
+  background-color: var(--dark-theme-primary-light);
+  box-shadow: var(--dark-theme-card-shadow)
+}
+
+.song-item {
+  background-color: var(--primary-color);
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  min-width: 10vw;
+  width: 60%;
+  text-align: center;
+  margin: 5px 0;
+}
+.song-item:hover {
+  background-color: #3d85c01f;
+}
+
+.song-item:active {
+  background-color: var(--primary-color);
+}
+
+.dark-theme-song-item {
+  background-color: var(--dark-theme-primary-color);
+}
+
+.dark-theme-song-item:hover {
+  background-color: rgba(115, 127, 139, 0.107);
+}
+
+
+.dark-theme-song-item:active {
+  background-color: var(--dark-theme-primary-color);
+}
+
+.songs-list-container {
+  gap: 20px;
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.list-header {
+  text-align: left;
+}
+
+.custom-select {
+  position: relative;
+  width: 120px;
+  /* background-color: #4278a3ed; */
+  background-color: var(--select-color);
+  color: black;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.selected {
+  padding: 10px 10px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.select-options {
+  display: none;
+  position: absolute;
+  width: 100%;
+  background-color: var(--select-dropdown-color);
+  list-style: none;
+  margin-top: 5px;
+  padding: 0;
+  z-index: 10;
+  border-radius: 10px;
+  box-shadow: 0px 2px 6px #1a486d;
+  overflow: hidden;
+}
+
+.select-options li {
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+.select-options li:hover {
+  background-color: #6e7376df;
+}
+
+.filter {
+  min-height: 500px;
+  height: 70vh;
+}
+
+.player {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+}
+
+.player-card {
+  background-color: var(--primary-color);
+  padding: 10px 20px;
+  border-radius: 10px;
+  text-align: center;
+  width: max-content;
+  box-shadow: var(--card-shadow);
+}
+
+.dark-theme-player-card {
+  background-color: var(--dark-theme-primary-color);
+  box-shadow: var(--dark-theme-card-shadow);
+}
+
+#artist {
+  text-align: left;
+  width: 70%;
+}
+
+#song-title {
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.playlist {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.playlist .card {
+  height: 80%;
+}
+
+.create-playlist-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+#create-playlist-input {
+  padding: 10px 20px;
+  background-color: white;
+}
+
+.dark-theme-create-playlist-input {
+  background-color: var(--dark-theme-primary-color) !important;
+  box-shadow: rgba(201, 202, 204, 0.916) 1.95px 1.95px 5px;
+  color: white !important;
+}
+
+.dark-theme-create-playlist-input:focus {
+  background-color: var(--dark-theme-primary-color) !important;
+  box-shadow: rgba(201, 202, 204, 0.916) 1.95px 1.95px 5px;
+}
+
+.dark-theme-create-playlist-input::placeholder {
+  color: white !important
+}
+
+
+#create-playlist-button {
+  border: none;
+  background-color: var(--button-color);
+  padding: 10px 20px;
+  font-weight: 500;
+  box-shadow: var(--button-shadow);
+  cursor: pointer;
+}
+
+#create-playlist-button:active {
+  opacity: 0.9;
+}
+
+.play-button {
+  border: none;
+  text-align: center;
+  background-color: var(--button-color);
+  padding: 8px 20px;
+  font-weight: 500;
+  box-shadow: var(--button-shadow);
+  color: white;
+  cursor: pointer;
+}
+
+input.play-button{
+  min-width: 100px;
+}
+
+.play-button:active {
+  opacity: 0.8;
+}
+.theme-light {
+  color: black;
+  background-color: white;
+}
+
+.theme-dark {
+  color: white;
+  background-color: black;
+}
+.songItemWrapper{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+#all-playlist{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#search-playlist, #search-song {
+  padding: 8px;
+  margin: 10px 0;
+  width: 80%;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}

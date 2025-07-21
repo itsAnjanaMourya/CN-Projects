@@ -1,0 +1,173 @@
+*{
+    margin:0;
+    padding:0;
+}
+header{
+    position: fixed;
+    top:0px;
+    background-color: darkblue;
+    width:100vw;
+    height:100px;
+    padding:0;
+    color: white;
+    text-align: center;
+    box-shadow: 0 0px 10px rgba(0,0,0,0.7);
+    z-index: 1000;
+}
+header h1{
+    line-height: 3;
+    font-size: 2.1rem;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+     overflow-x: hidden;
+}
+main {
+    padding-top: 120px; 
+    padding-bottom: 100px; 
+    background-color: transparent;
+}
+.back-image{
+    position: fixed;
+    top: 0;
+    background: url("https://ninjasfiles.s3.amazonaws.com/asset_0000000000003226_1714596295_pics1.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+}
+.back-image-text{
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    color:white;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    padding: 20px 40px;
+    border-radius: 10px;
+    text-align: center;
+}
+.overlay{
+    top:0px;
+    height:100%;
+    width:100%;
+    z-index: 1;
+    backdrop-filter: brightness(0.6);
+}
+.floating-cards{
+    padding: 0 6%;
+    position: absolute;
+    width:100%;
+    top:40%;
+    z-index: 1;
+    background-color: transparent;
+}
+.coaches-card{
+    position: relative;
+    margin:0 4%;
+    overflow: hidden;
+    display: inline-block;
+    border: 10px solid white;
+    background-color: white;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0px 10px rgba(0,0,0,0.7);
+}
+.card-text{
+    position: absolute; 
+    bottom: 2%;
+    left: 25%;
+    right:25%;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.coaches-card img{
+    width: 300px;
+    height: 25vh;
+    object-fit: cover;
+    border-radius: 10px;
+    filter: brightness(0.8);
+}
+.star-players{
+    left:39%;
+    width: 340px;
+    position: absolute;
+    top:80%;
+    z-index: 1;
+    border-radius: 20px;
+    background-color: white;
+    border: 1px slategrey solid;
+    padding:1%;
+}
+.star-player-card{
+    padding:2% 10%;
+    height:350px;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+.star-players img{
+    width:260px;
+    height: 180px;
+    object-fit: cover;
+    overflow: hidden;
+    display: inline-block;
+    border-radius: 20px;
+    overflow: hidden;
+    text-align: center;
+}
+.star-card-text{
+    margin: 10px;
+    text-align: center;
+    font-weight: bold;
+    bottom: 2%;
+    left: 25%;
+    right:25%;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+table{
+    top:150%;
+    left:10%;
+    position: absolute;
+    border-collapse: collapse;
+    width: 80%;
+    margin:0;
+    padding:0;
+    box-shadow: 0 0px 10px rgba(0,0,0,0.7);
+    z-index: 1;
+    font-family: Arial, Helvetica, sans-serif;
+}
+th{
+    width:50%;
+    background-color: darkblue;
+    padding:10px;
+    color: white;
+    text-align: left;
+    font-weight: bold;
+    border: 1px solid white;
+}
+td{
+    padding:10px;
+    text-align: left;
+    font-weight: bold;
+    border: 1px solid #ccc;
+    background-color: white;
+}
+footer{
+    position: absolute;
+    bottom: -120%;
+    background-color: darkblue;
+    width:100vw;
+    padding:20px;
+    box-shadow: 0 0px 10px rgba(0,0,0,0.7);
+}
+footer p, h2{
+    color: white;
+    text-align: center;
+    margin:20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}

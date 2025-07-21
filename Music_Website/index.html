@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="styles.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="header">
+        <label class="switch">
+            <input type="checkbox" id="theme-toggle">
+            <span class="slider round"></span>
+        </label>
+        <h1>Music Player</h1>
+    </div>
+    <div class="container">
+        <div class="card filter">
+            <div class="songs-list-container">
+                <label for="custom-select">Filter By Genre:</label>
+                <div id="custom-select" class="custom-select">
+                    <div class="selected">All
+                        <span>▾</span>
+                    </div>
+                    <ul class="select-options">
+                        <li data-value="all">All</li>
+                        <li data-value="pop">Pop</li>
+                        <li data-value="rock">Rock</li>
+                        <li data-value="hip-pop">Hip Pop</li>
+                    </ul>
+                </div>
+            </div>
+            <input type="text" id="search-song" placeholder="Search song..." />
+            <div style="display: flex; gap:20px; align-items: center">
+                <h3 class="list-header">All Songs</h3>
+                <input type="button" value="Play" id="play-all-filtered-list" class="play-button" />
+            </div>
+            <div id="songs-list"></div>
+
+        </div>
+        <div class="card player">
+            <div class="player-card">
+                <img src="images/Sugar.jpeg" alt="cover-image" id="song-image">
+                <p id="song-title">Sugar</p>
+                <p id="artist">Anno Domini</p>
+                <audio id="audio-player" controls>
+                    <source src="songs/Sugar.mp3" type="audio/mpeg" id="song-audio">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+            <div style="display: flex; gap: 10px">
+                <input type="button" value=&#10232; style='font-size:16px;' id="prev" class="play-button"></input>
+                <input type="button" value=&#10233; style='font-size:16px;' id="next" class="play-button" />
+            </div>
+            <input type="button" value="Add to playlist" id="add" class="play-button" />
+        </div>
+        <div class="playlist">
+            <div class="create-playlist-container">
+                <input type="text" placeholder="Enter playlist name" id="create-playlist-input" />
+                <input type="button" value="Create Playlist" id="create-playlist-button" />
+            </div>
+            <div class="card">
+                <div>
+                    <div style="display: flex; gap:20px; align-items: center">
+                        <h3 id="currentPlaylistHeading">Current PlayList</h3>
+                        <input type="button" value="Play" id="play-current-playlist" class="play-button" />
+                    </div>
+                    <div id="current-playlist-items"></div>
+                </div>
+                <input type="text" id="search-playlist" placeholder="Search playlist..." />
+                <div>
+                    <h3>All Playlists</h3>
+                    <div id="all-playlist"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./music.js"></script>
+</body>
+
+</html>

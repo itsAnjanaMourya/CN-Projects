@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <a href="index.html"><img src="../Multimedia/new_cn_logo.svg" /></a>
+        <br />
+        <h1>Create an Account</h1>
+    </header>
+    <section>
+        <form action="#" method="post">
+            <fieldset>
+                <legend><b>Personal Information</b></legend>
+                <br />
+                <label for="fullname">Full Name:</label>
+                <input type="text" id="fullname" name="fullname" required>
+                <br /><br />
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <br /><br />
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <br /><br />
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <br /><br />
+                <label for="userType">User Type:</label>
+                <select id="userType" name="userType" required>
+                    <option value="" disabled selected>Select user type</option>
+                    <option value="web-development">Student</option>
+                    <option value="data-science">Instructor</option>
+                </select>
+                <br /><br />
+                <label for="course">Select Course:</label>
+                <select id="course" name="course" required>
+                    <option value="web-development">Course 1 -Web Development</option>
+                    <option value="data-science">Course 2 - Data Science</option>
+                    <option value="digital-marketing">Course 3 - Digital Marketing</option>
+                    <option value="android-development">Course 4 - Android Development</option>
+                </select>
+                <br /><br />
+                <button type="submit">Register</button>
+            </fieldset>
+        </form>
+    </section>
+</body>
+</html>
