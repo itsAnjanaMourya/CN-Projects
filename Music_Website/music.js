@@ -17,12 +17,6 @@ const allSongs = [
         genre: 'hip-pop',
         artist: 'Mark Karan'
     },
-    {
-        id: 4,
-        name: 'Crash',
-        genre: 'rock',
-        artist: 'Annajean'
-    }
 
 ]
 
@@ -72,7 +66,7 @@ document.addEventListener("click", (e) => {
 
 document.getElementById("create-playlist-button").addEventListener("click", (e) => {
     e.preventDefault()
-    playlistNameToDisplay.textContent = ""
+    playlistNameToDisplay.textContent = "";
     console.log("newPlaylistName", newPlaylistName.value);
     const playlistName = newPlaylistName.value.trim();
     if (!playlistName) {
@@ -154,14 +148,12 @@ function renderSongs(filteredSongs, container = songListContainer) {
             return;
         }
     });
-    // searchSong.value.length === 0 && renderSongs(filteredSongs, container)
 
 
     filteredSongs.forEach((song) => {
         const songItemWrapper = document.createElement("div");
         songItemWrapper.classList.add("songItemWrapper");
         const songItem = document.createElement("div");
-        // songItem.style.display = "inline-block";
         songItem.textContent = song.name;
 
         songItem.classList.add("song-item");
@@ -227,13 +219,12 @@ document.getElementById("next").addEventListener("click", () => {
 });
 
 document.getElementById("prev").addEventListener("click", () => {
-    // if (currentPlaylistSongs.length === 0) return;
     if (currentPlaylistSongs.length === 0) currentPlaylistSongs = filteredSongList;
 
     currentSongIndex = (currentSongIndex - 1 + currentPlaylistSongs.length) % currentPlaylistSongs.length;
     playSong(currentPlaylistSongs[currentSongIndex]);
 });
-console.log("..............", playlists[currentPlaylist])
+
 const playCurrentPlaylistBtn = document.getElementById("play-current-playlist");
 
 if (!playlists[currentPlaylist] || playlists[currentPlaylist].length < 1) {
@@ -258,66 +249,6 @@ document.getElementById("play-all-filtered-list").addEventListener("click", () =
     currentSongIndex = 0;
     playSong(currentPlaylistSongs[currentSongIndex]);
 });
-
-// document.getElementById("play-current-playlist").addEventListener("click", () => {
-//     document.getElementById("next").addEventListener("click", () => {
-//         const playlistSongs = playlists[currentPlaylist] || [];
-//         if (playlistSongs.length === 0) return;
-
-//         currentSongIndex = (currentSongIndex + 1) % playlistSongs.length;
-//         playSong(playlistSongs[currentSongIndex]);
-//     })
-//     document.getElementById("prev").addEventListener("click", () => {
-//         const playlistSongs = playlists[currentPlaylist] || [];
-//         if (playlistSongs.length === 0) return;
-
-//         currentSongIndex = (currentSongIndex - 1) % playlistSongs.length;
-//         playSong(playlistSongs[currentSongIndex]);
-//     })
-// })
-
-// document.getElementById("play-all-filtered-list").addEventListener("click", () => {
-//     document.getElementById("next").addEventListener("click", () => {
-//         if (filteredSongList.length === 0) return;
-
-//         currentSongIndex = (currentSongIndex + 1) % filteredSongList.length;
-//         playSong(filteredSongList[currentSongIndex]);
-//     })
-//     document.getElementById("prev").addEventListener("click", () => {
-//         if (filteredSongList.length === 0) return;
-
-//         currentSongIndex = (currentSongIndex - 1) % filteredSongList.length;
-//         playSong(filteredSongList[currentSongIndex]);
-//     })
-// })
-
-
-// document.getElementById("next").addEventListener("click", () => {
-//     console.log("Currentplaylist", playlists[currentPlaylist])
-//     // if (currentPlaylist) {
-//     //     const playlistSongs = playlists[currentPlaylist] || [];
-//     //     if (playlistSongs.length === 0) return;
-
-//     //     currentSongIndex = (currentSongIndex + 1) % playlistSongs.length;
-//     //     playSong(playlistSongs[currentSongIndex]);
-//     // }
-//     // else {
-//     if (!currentPlaylist) {
-//         if (filteredSongList.length === 0) return;
-
-//         currentSongIndex = (currentSongIndex + 1) % filteredSongList.length;
-//         playSong(filteredSongList[currentSongIndex]);
-//     }
-//     // }
-// });
-
-// document.getElementById("prev").addEventListener("click", () => {
-//     if (filteredSongList.length === 0) return;
-
-//     currentSongIndex = (currentSongIndex - 1) % filteredSongList.length;
-//     playSong(filteredSongList[currentSongIndex]);
-// });
-
 
 document.getElementById("add").addEventListener("click", (e) => {
     e.preventDefault()
@@ -350,11 +281,17 @@ document.getElementById("add").addEventListener("click", (e) => {
 })
 
 function renderPlaylist(allPlaylist) {
-    allPlaylistContainer.textContent = ""
+    allPlaylistContainer.textContent = "";
+    const isDarkTheme = document.getElementById("theme-toggle").checked;
     allPlaylist.forEach(item => {
         const playlist = document.createElement("p");
         playlist.textContent = item;
         playlist.classList.add("song-item")
+
+        if (isDarkTheme) {
+            playlist.classList.add("dark-theme-song-item");
+        }
+
         allPlaylistContainer.append(playlist)
 
         playlist.addEventListener("click", () => {
@@ -377,7 +314,6 @@ const checkbox = document.getElementById("theme-toggle");
 const body = document.body;
 const cards = document.querySelectorAll(".card");
 const playerCard = document.querySelector(".player-card");
-// const playlistItems = document.querySelectorAll("#all-playlist p");
 const createPlaylistInput = document.getElementById("create-playlist-input");
 checkbox.addEventListener("change", () => {
     if (checkbox.checked) {
@@ -392,6 +328,7 @@ checkbox.addEventListener("change", () => {
 
         playerCard.classList.add("dark-theme-player-card")
         const playlistItems = document.querySelectorAll("#all-playlist p");
+        console.log(playlistItems)
         playlistItems.forEach(item => {
             item.classList.add("dark-theme-song-item");
         });

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="styles.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <h1>Stock Market Analysis</h1>
+        </header>
+        <div class="main">
+            <div id="chart-section">
+                <div id="chart-container" style="height: 400px;">
+                    <canvas id="stock-chart"></canvas>
+                    <div id="chart-controls">
+                        <button data-range="1mo">1 Month</button>
+                        <button data-range="3mo">3 Month</button>
+                        <button data-range="1y">1 Year</button>
+                        <button data-range="5y">5 Years</button>
+                    </div>
+                </div>
+                <div id="details-section"></div>
+            </div>
+            <div id="list-section"></div>
+        </div>
+    </div>
+    <script type="module" src="script.js"></script>
+</body>
+
+</html>

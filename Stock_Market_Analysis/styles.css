@@ -1,0 +1,122 @@
+body {
+  background-color: #070726;
+  color: white;
+}
+
+header h1 {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+#stock-chart {
+  height: 100% !important;
+  width: 100% !important;
+}
+
+#stock-chart {
+  background-color: #0f144f;
+  border-radius: 10px;
+  padding-right: 16%;
+  padding-bottom: 4%;
+}
+
+.main {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3rem;
+}
+
+#chart-section {
+  width: 60%;
+  padding: 1rem;
+}
+
+#list-section {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 3rem;
+  align-items: flex-end;
+}
+
+#details-section {
+  margin-top: 2rem;
+  text-align: justify;
+}
+
+#chart-container {
+  position: relative;
+  height: 400px;
+  padding-bottom: 30px;
+}
+
+#myChart {
+  width: 100%;
+  height: 100%;
+}
+
+#chart-controls {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  gap: 40px;
+}
+
+#chart-controls button {
+  padding: 4px 6px;
+  font-size: 16px;
+  border: none;
+  border-radius: 20px;
+  background-color: #191984;
+  cursor: pointer;
+  color: white;
+  transition: background-color 0.2s;
+}
+
+#chart-controls button:active {
+  background-color: rgba(18, 18, 99, 0.826);
+}
+
+
+
+.stock-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 50%;
+
+}
+
+.stock-item-data {
+  flex: 1;
+  margin: 6px 0;
+}
+
+button.stock-item-data {
+  background-color: #030c6b;
+  border: 2px solid #757575;
+  border-bottom-width: 0;
+  border-right-width: 0;
+  padding: 5px 0px;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  min-width: 60px;
+}
+
+button.stock-item-data:hover {
+  background-color: #070726;
+}
+
+button.stock-item-data:active {
+  border: 2px solid #757575;
+  border-top-width: 0;
+  border-left-width: 0;
+}
+
+#chartjs-custom-tooltip {
+  background-color: #0f144f;
+}
