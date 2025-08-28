@@ -1,0 +1,35 @@
+<div class="container my-4">
+  <h3 class="mb-3">Applicants for <%= job.job_designation %> at <%= job.company_name %></h3>
+  <% if (applicants && applicants.length > 0) { %>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Contact</th>
+          <th scope="col">Resume</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% applicants.forEach((a, index) => { %>
+          <tr>
+            <th scope="row"><%= index + 1 %></th>
+            <td><%= a.name %></td>
+            <td><%= a.email %></td>
+            <td><%= a.contact %></td>
+            <td>
+              <% if (a.resumePath) { %>
+                <a class="btn btn-sm btn-primary" href="<%= a.resumePath %>" target="_blank">View</a>
+              <% } else { %>
+                <span class="text-muted">No Resume</span>
+              <% } %>
+            </td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  <% } else { %>
+    <div class="alert alert-info">No applicants yet.</div>
+  <% } %>
+</div>

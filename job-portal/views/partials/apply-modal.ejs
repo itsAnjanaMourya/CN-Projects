@@ -1,0 +1,106 @@
+<div
+  class="modal fade"
+  id="applyModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5 text-success" id="exampleModalLabel">
+          easily
+        </h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <!-- form start  -->
+        <div class="form-container container p-3 mx-auto w-80 form-box my-5 rounded-md">
+          <h4 style="color: #181642" class="text-center mb-3">
+            apply in less than 1 minute
+          </h4>
+          <form
+            action="/jobs/<%= job.id %>/apply"
+            method="post"
+            enctype="multipart/form-data"
+          >
+            <div class="mb-3">
+              <div class="input-group">
+                <span class="input-group-text">Name</span>
+                <input
+                  required
+                  name="name"
+                  type="text"
+                  aria-label="First name"
+                  class="form-control"
+                  placeholder="enter your name"
+                />
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <div class="input-group">
+                <span class="input-group-text">Email</span>
+                <input
+                  required
+                  name="email"
+                  type="email"
+                  aria-label="email"
+                  class="form-control"
+                  placeholder="enter your email"
+                />
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <div class="input-group">
+                <span class="input-group-text">Contact</span>
+                <input
+                  required
+                  name="contact"
+                  type="tel"
+                  aria-label="First name"
+                  class="form-control"
+                  placeholder="+91 ____ __ ____"
+                />
+              </div>
+            </div>
+
+            <div class="input-group mb-3">
+              <label class="input-group-text" for="inputGroupFile01"
+                >Resume</label
+              >
+              <input
+                name="resume"
+                type="file"
+                class="form-control"
+                id="inputGroupFile01"
+                required
+              />
+            </div>
+
+            <button
+              class="w-100 mb-3 mt-2 btn btn-md btn-success"
+              type="submit"
+            >
+              Submit
+            </button>
+          </form>
+        </div>
+        <!-- form end  -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

@@ -1,0 +1,13 @@
+<div>
+    <div class="error container-fluid bg-theme">
+        <div class="error-top">
+            <h1 style="color: white; font-size: 100px">OOPs</h1>
+            <img width="400px" src="https://cdn.rawgit.com/ahmedhosna95/upload/1731955f/sad404.svg" alt="404" />
+        </div>
+        <% if (typeof error !=='undefined' && error) { %>
+            <h1 class="text-danger">
+                <%= error %>
+            </h1>
+            <% } %>
+    </div>
+</div>
